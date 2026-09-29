@@ -27,7 +27,7 @@ uv sync
 
 ```bash
 # 复制环境变量模板
-cp .env.example .env
+# .env 模板已随仓库提供；真实凭据写入 .env.local（优先级更高，git 忽略）
 
 # 编辑配置文件
 vi .env
@@ -168,7 +168,7 @@ docker-compose logs -f pg-mcp
 ## 下一步
 
 - 阅读完整文档：[README.md](README.md)
-- 查看配置选项：[.env.example](.env.example)
+- 查看配置选项：[.env](.env)
 - 探索示例：[CLAUDE_DESKTOP_SETUP.md](CLAUDE_DESKTOP_SETUP.md)
 - 设置监控：参见 README.md 监控章节
 
@@ -185,7 +185,7 @@ docker-compose logs -f pg-mcp
 ## 支持
 
 - 文档：README.md
-- 配置说明：.env.example
+- 配置说明：.env
 - Claude Desktop 集成：CLAUDE_DESKTOP_SETUP.md
 - 问题反馈：[GitHub Issues](repository-url/issues)
 

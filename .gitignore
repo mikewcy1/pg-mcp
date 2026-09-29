@@ -52,10 +52,6 @@ coverage.xml
 dmypy.json
 .pytype/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
 
 # Logs
 *.log
@@ -79,6 +75,11 @@ site/
 
 # Profiling
 *.prof
+
+# Environment variables: .env is a tracked template (placeholder values only);
+# real credentials live in .env.local and take precedence over .env
+.env.local
+.env.*.local
 
 # pytest
 .pytest_cache/

@@ -38,10 +38,8 @@ cd pg-mcp
 # 安装依赖
 uv sync
 
-# 复制环境配置模板
-cp .env.example .env
-
-# 编辑 .env 并配置参数
+# 编辑配置模板 .env（随仓库提供，占位值）
+# 真实凭据建议写入 .env.local（git 忽略，优先级高于 .env）
 vi .env
 ```
 
@@ -59,10 +57,8 @@ source .venv/bin/activate  # Windows 系统: .venv\Scripts\activate
 # 安装依赖
 pip install -e .
 
-# 复制环境配置模板
-cp .env.example .env
-
-# 编辑 .env 并配置参数
+# 编辑配置模板 .env（随仓库提供，占位值）
+# 真实凭据建议写入 .env.local（git 忽略，优先级高于 .env）
 vi .env
 ```
 
@@ -93,7 +89,7 @@ SECURITY_MAX_EXECUTION_TIME=30
 # SECURITY_ALLOW_EXPLAIN=false
 ```
 
-完整的配置选项请参考 `.env.example`。
+完整的配置选项请参考 `.env` 内注释。
 
 ### 多数据库（可选）
 
@@ -330,7 +326,7 @@ Return Type: sql
 | 变量                              | 描述                      | 默认值            |
 |-----------------------------------|---------------------------|-------------------|
 | `SECURITY_ALLOW_WRITE_OPERATIONS` | 允许 INSERT/UPDATE/DELETE | `false`           |
-| `SECURITY_BLOCKED_FUNCTIONS`      | 逗号分隔的函数黑名单      | 参考 .env.example |
+| `SECURITY_BLOCKED_FUNCTIONS`      | 逗号分隔的函数黑名单      | 参考 .env |
 | `SECURITY_MAX_ROWS`               | 每个查询的最大行数        | `10000`           |
 | `SECURITY_MAX_EXECUTION_TIME`     | 查询超时（秒）              | `30`              |
 
@@ -429,7 +425,7 @@ pg-mcp/
 │   ├── integration/        # 集成测试
 │   └── e2e/                # 端到端测试
 ├── fixtures/               # 测试数据库 fixture
-├── .env.example            # 环境模板
+├── .env                    # 环境配置模板（占位值；真实凭据放 .env.local）
 ├── pyproject.toml          # 项目配置
 └── main.py                 # 入口点
 ```
